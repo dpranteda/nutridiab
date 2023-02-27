@@ -5,7 +5,7 @@
 		<!--begin::Logo-->
 		<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
 			<a href="?page=index"> 
-				<img alt="Logo" th:src="@{assets/media/logos/diabetes-test.png}" src="default-dark.svg" class="h-20px h-lg-30px app-sidebar-logo-default" />
+				<img alt="Logo" th:src="@{assets/media/icons/duotune/medicine/med001.svg}" src="default-dark.svg" class="h-20px h-lg-30px app-sidebar-logo-default" />
 				<span th:text="#{label.application_title}"></span>
 			</a>
 		</div>
@@ -14,10 +14,10 @@
 		<!--begin::Header wrapper-->
 		<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
 			<!--layout-partial:layout/partials/header/_menu/_menu.html-->
-			<div th:insert="~{layout/partials/header/_menu/_menu}"></div>
+			<div th:insert="~{layout/partials/header/_menu/_menu}" th:remove="tag"></div>
 			
 			<!--layout-partial:layout/partials/header/_navbar.html-->
-			<div th:insert="~{layout/partials/header/_navbar}"></div>
+			<div th:insert="~{layout/partials/header/_navbar}" th:remove="tag"></div>
 		</div>
 		<!--end::Header wrapper-->
 		

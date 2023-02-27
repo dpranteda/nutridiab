@@ -16,11 +16,8 @@
         	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"/>        
         <!--end::Fonts-->
         
-        <!--begin::Vendor Stylesheets(used for this page only)-->
-            <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css"/>
-            <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"/>
-        <!--end::Vendor Stylesheets-->
         <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+       		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
             <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
             <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
         <!--end::Global Stylesheets Bundle-->
@@ -28,58 +25,36 @@
     <!--end::Head-->
     
     <!--begin::Body-->
-    <body  id="kt_app_body" data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on" data-kt-app-layout="dark-header" data-kt-app-header-fixed="true" data-kt-app-toolbar-enabled="true"  class="app-default" >
+    <body id="kt_app_body" data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on" data-kt-app-layout="light-header" data-kt-app-header-fixed="true" data-kt-app-toolbar-enabled="true"  class="app-default">
 	
 	<!--layout-partial:partials/theme-mode/_init.html-->
-	<div th:insert="~{partials/theme-mode/_init}"></div>
+	<div th:insert="~{partials/theme-mode/_init}" th:remove="tag"></div>
 
 	<!--layout-partial:layout/partials/_page-loader.html-->
-	<div th:insert="~{layout/partials/_page-loader}"></div>
+	<div th:insert="~{layout/partials/_page-loader}" th:remove="tag"></div>
 
 	<!--layout-partial:layout/layout/_default.html-->
-	<div th:insert="~{layout/_default}"></div>
+	<div th:insert="~{layout/_default}" th:remove="tag"></div>
 	
-<!--layout-partial:partials/_scrolltop.html-->
-                    <!--begin::Modals-->
-<!--layout-partial:partials/modals/_upgrade-plan.html-->
-<!--layout-partial:partials/modals/create-campaign/_main.html-->
-<!--layout-partial:partials/modals/users-search/_main.html-->
-<!--layout-partial:partials/modals/_invite-friends.html-->
-            <!--end::Modals-->
+	<!--layout-partial:partials/_scrolltop.html-->
+	<div th:insert="~{partials/_scrolltop}" th:remove="tag"></div>
+	
+    <!--begin::Modals-->
+		<!--layout-partial:partials/modals/_upgrade-plan.html-->
+		<!--layout-partial:partials/modals/create-campaign/_main.html-->
+		<!--layout-partial:partials/modals/users-search/_main.html-->
+		<!--layout-partial:partials/modals/_invite-friends.html-->
+    <!--end::Modals-->
         
        <!--begin::Javascript-->
 	        <script>
-	            var hostUrl = "assets/";        
+	           var hostUrl = "assets/";      
 	        </script>
                     
        <!--begin::Global Javascript Bundle(mandatory for all pages)-->
-           <script src="assets/plugins/global/plugins.bundle.js"></script>
-           <script src="assets/js/scripts.bundle.js"></script>
+           <script src="assets/plugins/global/plugins.bundle.js" th:src="@{assets/plugins/global/plugins.bundle.js}"></script>
+           <script src="assets/js/scripts.bundle.js" th:src="@{assets/js/scripts.bundle.js}"></script>
        <!--end::Global Javascript Bundle-->
-       
-                    <!--begin::Vendors Javascript(used for this page only)-->
-                            <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
-                            <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
-                            <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
-                        <!--end::Vendors Javascript-->
-                    <!--begin::Custom Javascript(used for this page only)-->
-                            <script src="assets/js/widgets.bundle.js"></script>
-                            <script src="assets/js/custom/apps/chat/chat.js"></script>
-                            <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-                            <script src="assets/js/custom/utilities/modals/create-campaign.js"></script>
-                            <script src="assets/js/custom/utilities/modals/users-search.js"></script>
-                        <!--end::Custom Javascript-->
-                <!--end::Javascript-->
     </body>
     <!--end::Body-->
 </html>
