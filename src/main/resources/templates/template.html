@@ -25,36 +25,36 @@
     <!--end::Head-->
     
     <!--begin::Body-->
-    <body id="kt_app_body" data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on" data-kt-app-layout="light-header" data-kt-app-header-fixed="true" data-kt-app-toolbar-enabled="true"  class="app-default">
+	<body id="kt_app_body" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+		<!--layout-partial:partials/theme-mode/_init.html-->
+		<div th:insert="~{partials/theme-mode/_init}" th:remove="tag"></div>
 	
-	<!--layout-partial:partials/theme-mode/_init.html-->
-	<div th:insert="~{partials/theme-mode/_init}" th:remove="tag"></div>
-
-	<!--layout-partial:layout/partials/_page-loader.html-->
-	<div th:insert="~{layout/partials/_page-loader}" th:remove="tag"></div>
-
-	<!--layout-partial:layout/layout/_default.html-->
-	<div th:insert="~{layout/_default}" th:remove="tag"></div>
+		<!--layout-partial:layout/partials/_page-loader.html-->
+		<div th:insert="~{layout/partials/_page-loader}" th:remove="tag"></div>
 	
-	<!--layout-partial:partials/_scrolltop.html-->
-	<div th:insert="~{partials/_scrolltop}" th:remove="tag"></div>
-	
-    <!--begin::Modals-->
-		<!--layout-partial:partials/modals/_upgrade-plan.html-->
-		<!--layout-partial:partials/modals/create-campaign/_main.html-->
-		<!--layout-partial:partials/modals/users-search/_main.html-->
-		<!--layout-partial:partials/modals/_invite-friends.html-->
-    <!--end::Modals-->
-        
-       <!--begin::Javascript-->
+		<!--layout-partial:layout/layout/_default.html-->
+		<div th:insert="~{layout/_default}" th:remove="tag"></div>
+		
+		<!--layout-partial:partials/_scrolltop.html-->
+		<div th:insert="~{partials/_scrolltop}" th:remove="tag"></div>
+		
+	    <!--begin::Modals-->
+			<!--layout-partial:partials/modals/_upgrade-plan.html-->
+			<!--layout-partial:partials/modals/create-campaign/_main.html-->
+			<!--layout-partial:partials/modals/users-search/_main.html-->
+			<!--layout-partial:partials/modals/_invite-friends.html-->
+	    <!--end::Modals-->
+	        
+      	<!--begin::Javascript-->
 	        <script>
 	           var hostUrl = "assets/";      
 	        </script>
-                    
-       <!--begin::Global Javascript Bundle(mandatory for all pages)-->
+       	<!--end::Javascript-->      
+       	  
+       	<!--begin::Global Javascript Bundle(mandatory for all pages)-->
            <script src="assets/plugins/global/plugins.bundle.js" th:src="@{assets/plugins/global/plugins.bundle.js}"></script>
            <script src="assets/js/scripts.bundle.js" th:src="@{assets/js/scripts.bundle.js}"></script>
-       <!--end::Global Javascript Bundle-->
+      	<!--end::Global Javascript Bundle-->
     </body>
     <!--end::Body-->
 </html>
